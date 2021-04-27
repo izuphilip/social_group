@@ -1,3 +1,4 @@
+<div class="container"><?= $Self->Toast(); ?></div>
 <div class="container text-center mb-1 mt-50" ><img src="<?=  $assets ?>/assets/images/banner/download.jpg" style="height:fit-content; widht:100px;" alt=""></div>
 <div class="text-center mt-1" style="margin: 15% auto; width:100%">
 

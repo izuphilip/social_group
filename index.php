@@ -1,5 +1,8 @@
 <?php
 
+use Apps\Core;
+
+use function PHPSTORM_META\elementType;
 
 define('DOT', '.');
 require_once DOT . "/bootstrap.php";
@@ -15,6 +18,55 @@ $Route->add('/social_group/', function () {
     $Template->render("home");
 
 }, 'GET');
+$Route->add('/social_group/register', function () {
+    
+    $Template = new Apps\Template;
+    $Template->addheader("layouts.header");
+    $Template->addfooter("layouts.footer");
+    $Template->assign("title","register");
+
+    $Template->render("register");
+
+}, 'GET');
+
+
+$Route->add('/social_group/dashboard', function () {
+     $Core = new Apps\Core; 
+    $Template = new Apps\Template;
+    $Template->addheader("layouts.header");
+    $Template->addfooter("layouts.header");
+    $Template->assign("title","dashboard");
+    $selects = $Core->Selectmember();
+
+    $Template->assign("select","$selects");
+
+    $Template->render("dasboard");
+
+
+},'GET');
+
+
+
+$Route->add('/social_group/forms/register',function(){
+    $Template = new Apps\Template;
+    $Core = new Apps\Core;
+    $Data = $Core->data;
+    $fname = $Data->fname;
+    $lname = $Data->lname;
+    $email = $Data->email;
+    $dateofbirth= $Data->dateofbirth;
+    $mobile = $Data->mobile;
+    $password = $Data->password;
+    $repeatpassword = $Data->repeatpassword;
+    $id = $Core->RegisterMembers($fname,$lname,$email,$mobile,$dateofbirth,$password,$repeatpassword);
+    if($id){
+        $Template->setError("Registered successfully" ,"success" ,"/social_group/dashboard");
+        $Template->redirect("/social_group/dashboard");
+    }else {
+        $Template->setError("Registration failed ! Try again.","warning","/social_group/forms/register");
+        $Template->redirect("/social_group/forms/register");
+    }
+},'POST');
 //Home page//
 
 
