@@ -18,6 +18,7 @@ $Route->add('/social_group/', function () {
     $Template->render("home");
 
 }, 'GET');
+<<<<<<< HEAD
 $Route->add('/social_group/register', function () {
     
     $Template = new Apps\Template;
@@ -68,10 +69,21 @@ $Route->add('/social_group/forms/register',function(){
     }
 },'POST');
 //Home page//
+=======
+>>>>>>> 3d6c723cf82c032836149b346a8ed08405a31017
 
 
+$Route->add('/social_group/login', function () {
+    
+    $Template = new Apps\Template;
+    $Template->addheader("layouts.header");
+    $Template->addfooter("layouts.footer");
+    $Template->assign("title","login");
 
+    $Template->render("login");
 
+}, 'GET');
+//Home page//
 
 //Logout Sessions//
 $Route->add(

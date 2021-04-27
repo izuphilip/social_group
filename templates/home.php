@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container text-center mb-1 mt-50" ><img src="<?=  $assets ?>/assets/images/banner/download.jpg" style="height:fit-content; widht:100px;" alt=""></div>
 <div class="text-center mt-1" style="margin: 15% auto; width:100%">
 
@@ -464,3 +465,17 @@
 
 
     
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Home</h1>
+</body>
+</html>
+>>>>>>> 3d6c723cf82c032836149b346a8ed08405a31017
