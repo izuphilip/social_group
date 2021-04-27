@@ -1,2 +1,7 @@
 vendor/
 composer.lock
+config/
+.htaccess
+_sessions/
+_store/
+
