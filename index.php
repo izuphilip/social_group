@@ -15,11 +15,19 @@ $Route->add('/social_group/', function () {
     $Template->render("home");
 
 }, 'GET');
+
+
+$Route->add('/social_group/login', function () {
+    
+    $Template = new Apps\Template;
+    $Template->addheader("layouts.header");
+    $Template->addfooter("layouts.footer");
+    $Template->assign("title","login");
+
+    $Template->render("login");
+
+}, 'GET');
 //Home page//
-
-
-
-
 
 //Logout Sessions//
 $Route->add(
