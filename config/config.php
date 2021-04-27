@@ -6,7 +6,7 @@
  * Constants
  */
 
-define("appname","Anthill");
+define("appname","Social_group");
 define("version","21.03.29");
 define("version_date","29-03-2021");
 define("debug",true);
@@ -40,7 +40,7 @@ define("session_delete_timout",30);
 define("auth_session_key","logged_in");
 define("auth_url","/auth/login");
 
-define("domain", "https://localhost/anthilltutors/");
+define("domain", "https://localhost/social_group/");
 
 define("db_host","localhost");
 define("db_user","root");

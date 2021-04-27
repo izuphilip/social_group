@@ -5,14 +5,14 @@ define('DOT', '.');
 require_once DOT . "/bootstrap.php";
 
 //Home page//
-$Route->add('/anthilltutors/', function () {
+$Route->add('/social_group/', function () {
     
     $Template = new Apps\Template;
-    $Template->addheader("docs.layouts.header");
-    $Template->addfooter("docs.layouts.footer");
-    $Template->assign("title","Anthill Home");
+    $Template->addheader("layouts.header");
+    $Template->addfooter("layouts.footer");
+    $Template->assign("title","Home");
 
-    $Template->render("docs.index");
+    $Template->render("home");
 
 }, 'GET');
 //Home page//

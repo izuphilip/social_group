@@ -14,7 +14,7 @@
 	</IfModule>
 
 	RewriteEngine On
-	RewriteBase /anthilltutors
+	RewriteBase /social_group
 
 	# Handle Authorization Header
 	RewriteCond %{HTTP:Authorization} .
