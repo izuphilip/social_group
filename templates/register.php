@@ -1,3 +1,4 @@
+<div margin=80%>
 <form action="/social_group/forms/register" method="POST">
   <div class="container-fluid" class="col-sm-0">
     <h1 class="text-center" style="font-size:70px;"><u>Register</u></h1>
@@ -33,3 +34,4 @@
     <p>Already have an account? <a href="./">Sign in</a>.</p>
   </div>
 </form>
+</div>

@@ -1,8 +1,6 @@
 <?php
 
-use Apps\Core;
 
-use function PHPSTORM_META\elementType;
 
 define('DOT', '.');
 require_once DOT . "/bootstrap.php";
@@ -18,7 +16,8 @@ $Route->add('/social_group/', function () {
     $Template->render("home");
 
 }, 'GET');
-<<<<<<< HEAD
+
+
 $Route->add('/social_group/register', function () {
     
     $Template = new Apps\Template;
@@ -69,8 +68,6 @@ $Route->add('/social_group/forms/register',function(){
     }
 },'POST');
 //Home page//
-=======
->>>>>>> 3d6c723cf82c032836149b346a8ed08405a31017
 
 
 $Route->add('/social_group/login', function () {
