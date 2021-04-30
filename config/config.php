@@ -38,14 +38,14 @@ define("session_path","./_sessions/");
 define("session_timout",20);
 define("session_delete_timout",30);
 define("auth_session_key","logged_in");
-define("auth_url","/auth/login");
+define("auth_url","/social_group/login");
 
 define("domain", "https://localhost/social_group/");
 
 define("db_host","localhost");
 define("db_user","root");
 define("db_password","");
-define("db_name","db");
+define("db_name","socialdb");
 define("db_port",null);
 define("db_charset","utf8");
 define("db_socket",null);

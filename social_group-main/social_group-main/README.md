@@ -1,2 +1,0 @@
-# anthill
-Golojans Anthill

@@ -15,16 +15,32 @@ class Core extends Model
 		parent::__construct();
 	}
 
-public function RegisterMembers($fname,$lname,$email,$mobile,$dateofbirth,$password,$repeatpassword)
+	public function password1tohash($password)
 {
-	mysqli_query($this->dbCon,"INSERT INTO sgroup_table($fname,$lname,$email,$mobile,$dateofbirth,$password,$repeatpassword) VALUES('$fname','$lname','$email','$mobile','$password','$repeatpassword')");
-	return $this->getLastId;
-}
-
-public function Selectmember()
-{
-	$selected = mysqli_query($this->dbCon, "SELECT * sgroup_table");
-	return $selected;
-}
+	return sha1(md5($password . encrypt_salt));
 	
 }
+
+	public function UserLogin($email,$password)
+	{
+		$login = mysqli_query($this->dbCon, "SELECT * FROM sgroup_table WHERE email='$email' AND password='$password'");
+		$row = mysqli_fetch_object($login);
+		return $row;
+	}
+
+public function RegisterMembers($fname,$lname,$email,$mobile,$dateofbirth,$password)
+{
+	 $added =  mysqli_query($this->dbCon, "INSERT INTO `sgroup_table` (`id`, `fname`, `lname`, `email`, `mobile`, `date_of_birth`, `password`) VALUES (NULL, '$fname', '$lname', '$email', '$mobile', '$dateofbirth', '$password');");
+	return $added;
+}
+ 
+public function Getregistered()
+{
+	$getmembers = mysqli_query($this->dbCon, "SELECT *  FROM sgroup_table ");
+	return $getmembers;
+}
+
+
+}
+
+
