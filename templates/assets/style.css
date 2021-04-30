@@ -1,0 +1,96 @@
+h1{
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 5px;
+    font-family: 'Courier New', Courier, monospac
+}
+h2{
+    color: aqua;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+a{
+color: white;
+}
+button{
+    border-radius: 12px;
+    background-color: black;
+    margin-right:10px;
+    margin-left: 290px;
+}
+
+.container{
+    margin-bottom: 240px;
+    margin-top: 100px;
+}
+
+.row{
+text-align:right;
+}
+.container-fluid{
+color:black;
+text-align: right;
+margin-top:150px ;
+}
+ body{
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     background-image: url(image/photo-1604964432806-254d07c11f32.jpg);
+     font-weight: 600;
+     font-size: larger;
+ }
+
+ .avatar-wrapper{
+	position: relative;
+	height: 200px;
+	width: 200px;
+	margin: 50px auto;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 1px 1px 15px -5px black;
+	transition: all .3s ease;
+	&:hover{
+		transform: scale(1.05);
+		cursor: pointer;
+	}
+	&:hover .profile-pic{
+		opacity: .5;
+	}
+	.profile-pic {
+    height: 100%;
+		width: 100%;
+		transition: all .3s ease;
+		&:after{
+			font-family: FontAwesome;
+			content: "\f007";
+			top: 0; left: 0;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			font-size: 190px;
+			background: #ecf0f1;
+			color: #34495e;
+			text-align: center;
+		}
+	}
+	.upload-button {
+		position: absolute;
+		top: 0; left: 0;
+		height: 100%;
+		width: 100%;
+		.fa-arrow-circle-up{
+			position: absolute;
+			font-size: 234px;
+			top: -17px;
+			left: 0;
+			text-align: center;
+			opacity: 0;
+			transition: all .3s ease;
+			color: #34495e;
+		}
+		&:hover .fa-arrow-circle-up{
+			opacity: .9;
+		}
+	}
+}
