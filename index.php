@@ -1,10 +1,6 @@
 <?php
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 0a9a274828e54136e3750aea30da26d45074d0dc
 define('DOT', '.');
 require_once DOT . "/bootstrap.php";
 
@@ -20,10 +16,6 @@ $Route->add('/social_group/', function () {
 
 }, 'GET');
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 0a9a274828e54136e3750aea30da26d45074d0dc
 $Route->add('/social_group/register', function () {
     
     $Template = new Apps\Template;
@@ -33,6 +25,15 @@ $Route->add('/social_group/register', function () {
 
     $Template->render("register");
 
+}, 'GET');
+
+$Route->add('/social_group/update', function() {
+    $Template = new Apps\Template;
+    $Core = new Apps\Core;
+    $Template->addheader("layouts.header");
+    $Template->addfooter("layouts.header");
+    $Template->assign("title","update");
+    $Template->render("update");
 }, 'GET');
 
 
@@ -66,27 +67,10 @@ $Route->add('/social_group/forms/login', function () {
     $Template = new Apps\Template;
     $Data = $Core->data;
     $email = $Data->email;
-<<<<<<< HEAD
-    $dateofbirth= $Data->dateofbirth;
-    $mobile = $Data->mobile;
-    $password = $Data->password;
-    $repeatpassword = $Data->repeatpassword;
-    $id = $Core->RegisterMembers($fname,$lname,$email,$mobile,$dateofbirth,$password,$repeatpassword);
-    if($id){
-        $Template->setError("Registered successfully" ,"success" ,"/social_group/dashboard");
-        $Template->redirect("/social_group/dashboard");
-    }else {
-        $Template->setError("Registration failed ! Try again.","warning","/social_group/forms/register");
-        $Template->redirect("/social_group/forms/register");
-    }
-},'POST');
-//Home page//
-=======
     $password = $Core->password1tohash($Data->password);
     $login = $Core->UserLogin($email, $password);
     if ($login->id) {
         $Template->authorize($login->id);
->>>>>>> 0a9a274828e54136e3750aea30da26d45074d0dc
 
     $Template->setError("Login Successful","success","/social_group/dashboard");
     $Template->redirect("/social_group/dashboard");
