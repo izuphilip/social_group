@@ -1,6 +1,5 @@
 <?php
 
-use Apps\Core;
 
 define('DOT', '.');
 require_once DOT . "/bootstrap.php";
@@ -26,6 +25,15 @@ $Route->add('/social_group/register', function () {
 
     $Template->render("register");
 
+}, 'GET');
+
+$Route->add('/social_group/update', function() {
+    $Template = new Apps\Template;
+    $Core = new Apps\Core;
+    $Template->addheader("layouts.header");
+    $Template->addfooter("layouts.header");
+    $Template->assign("title","update");
+    $Template->render("update");
 }, 'GET');
 
 
